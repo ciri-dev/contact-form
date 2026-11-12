@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact form for ciridev support.">
+  <title>ciridev Contact Form</title>
+  <style>
+    body {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      height: 100vh;
+    }
+    header {
+      padding: 1rem 0;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      margin: 0 auto;
+    }
+    nav h1 {
+      margin: 0;
+    }
+    nav span {
+      color: teal;
+    }
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      cursor: pointer;
+    }
+    main {
+      width: 80%;
+      margin: 2rem auto;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      div:not(:last-of-type, .radios) {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    input[type="text"], input[type="email"], select, textarea {
+      width: 90%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 4px;
+    }
+    input[type="submit"] {
+      max-width: 200px;
+      padding: 0.5rem 1rem;
+      background-color: teal;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darkcyan;
+      }
+    }
+
+    footer {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1><span>ciridev</span> Support</h1>
+      <ul>
+        <li>Home</li>
+        <li>Help</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <hr>
+    <h2>Contact Us</h2>
+    <p>Send us a message and we will get back to you</p>
+    <form action="https://httpbin.org/post" method="post">
+      <div>
+        <label for="name">Full name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div>
+        <label for="subject">Subject:</label>
+        <select name="subject" id="subject">
+          <option value="">Choose a topic</option>
+          <option value="general">General Inquiry</option>
+          <option value="support">Support Request</option>
+          <option value="feedback">Feedback</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" cols="50" minlength="10" required></textarea>
+      </div>
+      
+      <fieldset>
+        <legend>How did you hear about us?</legend>
+        <div class="radios">
+          <input type="radio" name="feedback" id="search" value="search">
+          <label for="search">Search</label>
+        </div>
+        <div class="radios">
+          <input type="radio" name="feedback" id="friend" value="friend">
+          <label for="friend">Friend</label>
+        </div>
+        <div class="radios">
+          <input type="radio" name="feedback" id="social" value="social">
+          <label for="social">Social Media</label>
+        </div>
+      </fieldset>
+
+      <div>
+        <input type="checkbox" name="newsletter" id="newsletter">
+        <label for="newsletter">Send me product updates</label>
+      </div>
+
+      <input type="submit" value="Send Message">
+    </form>
+    <hr>
+  </main>
+  <footer>
+    <p>&copy; 2026 ciridev. All rights reserved.</p>
+  </footer>
+</body>
+</html>
